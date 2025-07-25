@@ -6,7 +6,7 @@
   "scripts": {
     "dev:client": "vite --host --port 3000",
     "dev": "pnpm dev:client",
-     "build:client": "vite build --outDir dist --base=/",
+   "build:client": "vite build --outDir dist",
   "build": "@echo on && echo [1/5] Starting build process && (if exist dist (echo [2/5] Removing existing dist directory && rmdir /s /q dist || echo [2/5] Failed to remove dist directory, continuing build...) else (echo [2/5] No existing dist directory to remove)) && echo [3/5] Running Vite build... && pnpm build:client && (echo [4/5] Vite build completed successfully && echo [5/5] Copying necessary files... && copy package.json dist && type nul > dist/build.flag && echo Build completed successfully! dist directory created. && exit 0) || (echo ERROR: Build failed during Vite build step! Check the error messages above for details. && exit 1)",
   "preview": "if not exist dist (echo Error: dist directory not found! Please run 'pnpm build' first. && exit 1) else (echo Starting preview server... && vite preview --port 8080 --outDir dist)",
     "fix-npm-warnings": "npm config delete verify-deps-before-run && npm config delete _jsr-registry"
